@@ -1,0 +1,20 @@
+
+server:
+  port: 9101
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+spring:
+  application:
+    name: lc-device
+  cloud:
+    config:
+      name: lc-device
+      profile: prd
+      label: master
+      discovery:
+        enabled: true
+        serviceId: lc-config

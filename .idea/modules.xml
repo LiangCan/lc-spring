@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lc-app/lc-app.iml" filepath="$PROJECT_DIR$/lc-app/lc-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc-config/lc-config.iml" filepath="$PROJECT_DIR$/lc-config/lc-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc-device/lc-device.iml" filepath="$PROJECT_DIR$/lc-device/lc-device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc-eureka/lc-eureka.iml" filepath="$PROJECT_DIR$/lc-eureka/lc-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc-gateway/lc-gateway.iml" filepath="$PROJECT_DIR$/lc-gateway/lc-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lcspringcloud.iml" filepath="$PROJECT_DIR$/.idea/lcspringcloud.iml" />
+    </modules>
+  </component>
+</project>

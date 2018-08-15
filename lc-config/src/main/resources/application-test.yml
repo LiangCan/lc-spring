@@ -1,0 +1,27 @@
+server:
+  port: 9002
+
+eureka:
+   client:
+      serviceUrl:
+        defaultZone: http://localhost:9001/eureka/
+   instance:
+      instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LiangCan/Lc-SpringCloud
+#          searchPaths: respo  #路径
+#          username: LiangCan123456
+#          password: 1234456
+      label: master
+  application:
+    name: lc-config
+  rabbitmq:
+    host: 172.19.2.122
+    port: 5672
+    username: admin
+    password: 123456

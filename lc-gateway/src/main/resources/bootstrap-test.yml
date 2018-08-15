@@ -1,0 +1,35 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+
+feign:
+  hystrix:
+    enabled: true
+
+server:
+  port: 9003
+
+
+spring:
+  application:
+    name: lc-gateway
+  cloud:        # spring cloud gateway 路由配置方式
+    config:
+      label: master
+      profile: dev
+      name: lc-gateway,lc-conf
+      discovery:
+        enabled:  true
+        serviceId: LC-CONFIG
+    gateway:
+      discovery:      #是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
+        locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问。
+          enabled: true
+    routes:
+    - id: LC-APP          #网关路由到APP服务order-service
+      uri: lb://LC-APP
+      predicates:
+        - Path=/LC-APP/**

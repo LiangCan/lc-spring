@@ -1,0 +1,23 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: lc-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/LiangCan/Lc-SpringCloud
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1
+#    hostname: locatest1

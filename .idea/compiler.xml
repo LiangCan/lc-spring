@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lc-app" />
+        <module name="lc-config" />
+        <module name="lc-device" />
+        <module name="lc-eureka" />
+        <module name="lc-gateway" />
+        <module name="service-hi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lc-app" target="1.8" />
+      <module name="lc-config" target="1.8" />
+      <module name="lc-device" target="1.8" />
+      <module name="lc-eureka" target="1.8" />
+      <module name="lc-gateway" target="1.8" />
+      <module name="lcspringcloud" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
