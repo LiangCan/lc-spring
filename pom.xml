@@ -21,6 +21,8 @@
         <module>lc-gateway</module>
         <module>lc-app</module>
         <module>lc-device</module>
+        <module>lc-core</module>
+        <module>lc-agreement</module>
     </modules>
 
     <properties>

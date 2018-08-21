@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lc-agreement" />
         <module name="lc-app" />
         <module name="lc-config" />
+        <module name="lc-core" />
         <module name="lc-device" />
         <module name="lc-eureka" />
         <module name="lc-gateway" />
@@ -15,8 +17,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lc-agreement" target="1.8" />
       <module name="lc-app" target="1.8" />
       <module name="lc-config" target="1.8" />
+      <module name="lc-core" target="1.8" />
       <module name="lc-device" target="1.8" />
       <module name="lc-eureka" target="1.8" />
       <module name="lc-gateway" target="1.8" />

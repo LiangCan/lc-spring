@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/lc-agreement/lc-agreement.iml" filepath="$PROJECT_DIR$/lc-agreement/lc-agreement.iml" />
       <module fileurl="file://$PROJECT_DIR$/lc-app/lc-app.iml" filepath="$PROJECT_DIR$/lc-app/lc-app.iml" />
+      <module fileurl="file://D:\lcspringcloud\lc-springcloud\lc-app\lc-app.iml" filepath="D:\lcspringcloud\lc-springcloud\lc-app\lc-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lc-config/lc-config.iml" filepath="$PROJECT_DIR$/lc-config/lc-config.iml" />
+      <module fileurl="file://D:\lcspringcloud\lc-springcloud\lc-config\lc-config.iml" filepath="D:\lcspringcloud\lc-springcloud\lc-config\lc-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc-core/lc-core.iml" filepath="$PROJECT_DIR$/lc-core/lc-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/lc-device/lc-device.iml" filepath="$PROJECT_DIR$/lc-device/lc-device.iml" />
+      <module fileurl="file://D:\lcspringcloud\lc-springcloud\lc-device\lc-device.iml" filepath="D:\lcspringcloud\lc-springcloud\lc-device\lc-device.iml" />
       <module fileurl="file://$PROJECT_DIR$/lc-eureka/lc-eureka.iml" filepath="$PROJECT_DIR$/lc-eureka/lc-eureka.iml" />
+      <module fileurl="file://D:\lcspringcloud\lc-springcloud\lc-eureka\lc-eureka.iml" filepath="D:\lcspringcloud\lc-springcloud\lc-eureka\lc-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/lc-gateway/lc-gateway.iml" filepath="$PROJECT_DIR$/lc-gateway/lc-gateway.iml" />
+      <module fileurl="file://D:\lcspringcloud\lc-springcloud\lc-gateway\lc-gateway.iml" filepath="D:\lcspringcloud\lc-springcloud\lc-gateway\lc-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/lcspringcloud.iml" filepath="$PROJECT_DIR$/.idea/lcspringcloud.iml" />
     </modules>
   </component>
