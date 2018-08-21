@@ -19,7 +19,7 @@ spring:
 #          password: 1234456
       label: master
   application:
-    name: lc-config
+    name: LC-CONFIG
   rabbitmq:
     host: 172.19.2.122
     port: 5672

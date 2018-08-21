@@ -15,7 +15,7 @@ server:
 
 spring:
   application:
-    name: lc-gateway
+    name: LC-GATEWAY
   cloud:        # spring cloud gateway 路由配置方式
     config:
       label: master

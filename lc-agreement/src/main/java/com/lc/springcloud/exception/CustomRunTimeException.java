@@ -14,83 +14,110 @@ public class CustomRunTimeException extends RuntimeException {
     private Exception exception;
     private Object result;
 
-    public CustomRunTimeException() {
 
+    public CustomRunTimeException(ResultCodeEnum resultCodeEnum) {
+        super();
+        this.errorCode = resultCodeEnum.getKey();
+        this.errorMsg = ServiceUtils.messageUtils.getMessage(resultCodeEnum.getValue());
     }
 
-    public CustomRunTimeException(String errorCode) {
+    public CustomRunTimeException(ResultCodeEnum resultCodeEnum, String errorMsgValue) {
         super();
-        this.errorCode = errorCode;
+        this.errorCode = resultCodeEnum.getKey();
+        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsgValue);
+    }
+
+    public CustomRunTimeException(ResultCodeEnum resultCodeEnum,  Object [] objectName) {
+        super();
+        this.errorCode = resultCodeEnum.getKey();
+        this.errorMsg = ServiceUtils.messageUtils.getMessage(resultCodeEnum.getValue(), objectName);
+    }
+
+    public CustomRunTimeException(ResultCodeEnum resultCodeEnum, Object [] objectName, Object result) {
+        super();
+        this.errorCode = resultCodeEnum.getKey();
+        this.errorMsg = ServiceUtils.messageUtils.getMessage(resultCodeEnum.getValue(), objectName);
+        this.result = result;
+    }
+
+    public CustomRunTimeException(ResultCodeEnum resultCodeEnum, String errorMsgValue,Object [] objectName, Object result) {
+        super();
+        this.errorCode = resultCodeEnum.getKey();
+        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsgValue, objectName);
+        this.result = result;
+    }
+
+    public CustomRunTimeException(ResultCodeEnum resultCodeEnum, String errorMsgValue,Object [] objectName) {
+        super();
+        this.errorCode = resultCodeEnum.getKey();
+        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsgValue, objectName);
+    }
+//    public CustomRunTimeException(String errorCode, String errorMsg) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsg);
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, this.errorMsg));
+//    }
+//
+//    public CustomRunTimeException(String errorCode, String errorMsg, Object[] para) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsg, para);
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, this.errorMsg));
+//    }
+//    public CustomRunTimeException(String errorCode, String errorMsg, Object[] para, Object result) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsg, para);
+//        this.result = result;
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, this.errorMsg));
+//    }
+//    public CustomRunTimeException(String errorCode, String errorMsg, String errorDetail) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = errorMsg;
+//        this.errorDetail = errorDetail;
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】errorDetail【%s】", errorCode, errorMsg, this.errorMsg));
+//    }
+//
+//    public CustomRunTimeException(String errorCode, Object result) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.result = result;
 //        logger.error(String.format("errorCode【%s】", errorCode));
-    }
-
-
-    public CustomRunTimeException(String errorCode, String errorMsg) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsg);
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, this.errorMsg));
-    }
-
-    public CustomRunTimeException(String errorCode, String errorMsg, Object[] para) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsg, para);
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, this.errorMsg));
-    }
-    public CustomRunTimeException(String errorCode, String errorMsg, Object[] para, Object result) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = ServiceUtils.messageUtils.getMessage(errorMsg, para);
-        this.result = result;
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, this.errorMsg));
-    }
-    public CustomRunTimeException(String errorCode, String errorMsg, String errorDetail) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = errorMsg;
-        this.errorDetail = errorDetail;
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】errorDetail【%s】", errorCode, errorMsg, this.errorMsg));
-    }
-
-    public CustomRunTimeException(String errorCode, Object result) {
-        super();
-        this.errorCode = errorCode;
-        this.result = result;
-        logger.error(String.format("errorCode【%s】", errorCode));
-        printMessage(result);
-    }
-
-    public CustomRunTimeException(String errorCode, String errorMsg, Exception exception) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = errorMsg;
-        this.exception = exception;
-
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】detail【%s】", errorCode, errorMsg, exception.getMessage()));
-        printMessage(exception);
-    }
-
-    public CustomRunTimeException(String errorCode, String errorMsg, Object result) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = errorMsg;
-        this.result = result;
-
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, errorMsg));
-        printMessage(result);
-    }
-
-    public CustomRunTimeException(String errorCode, String errorMsg, Object result, String errorDetail) {
-        super();
-        this.errorCode = errorCode;
-        this.errorMsg = errorMsg;
-        this.errorDetail = errorDetail;
-        this.result = result;
-
-//        logger.error(String.format("errorCode【%s】errorMsg【%s】errorDetail【%s】", errorCode, errorMsg, errorDetail));
-        printMessage(result);
-    }
+//        printMessage(result);
+//    }
+//
+//    public CustomRunTimeException(String errorCode, String errorMsg, Exception exception) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = errorMsg;
+//        this.exception = exception;
+//
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】detail【%s】", errorCode, errorMsg, exception.getMessage()));
+//        printMessage(exception);
+//    }
+//
+//    public CustomRunTimeException(String errorCode, String errorMsg, Object result) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = errorMsg;
+//        this.result = result;
+//
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】", errorCode, errorMsg));
+//        printMessage(result);
+//    }
+//
+//    public CustomRunTimeException(String errorCode, String errorMsg, Object result, String errorDetail) {
+//        super();
+//        this.errorCode = errorCode;
+//        this.errorMsg = errorMsg;
+//        this.errorDetail = errorDetail;
+//        this.result = result;
+//
+////        logger.error(String.format("errorCode【%s】errorMsg【%s】errorDetail【%s】", errorCode, errorMsg, errorDetail));
+//        printMessage(result);
+//    }
 
     private void printMessage(Object result) {
         if (null != result) {
@@ -131,7 +158,7 @@ public class CustomRunTimeException extends RuntimeException {
      */
     public static void checkNull(Object object, String objName){
         if(object == null){
-            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NULL.getKey(), ResultCodeEnum.API_DATA_IS_NULL.getValue(), new Object[]{objName});
+            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NULL, new Object[]{objName});
         }
     }
     /**
@@ -141,7 +168,7 @@ public class CustomRunTimeException extends RuntimeException {
      */
     public static void checkNull(String object, String objName){
         if(object == null){
-            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NULL.getKey(), ResultCodeEnum.API_DATA_IS_NULL.getValue(), new Object[]{objName});
+            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NULL, new Object[]{objName});
         }
     }
     /**
@@ -151,7 +178,7 @@ public class CustomRunTimeException extends RuntimeException {
      */
     public static void checkNull(Object object, String objName, Object result){
         if(object == null){
-            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NULL.getKey(), ResultCodeEnum.API_DATA_IS_NULL.getValue(), new Object[]{objName}, result);
+            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NULL, new Object[]{objName}, result);
         }
     }
 
@@ -160,7 +187,7 @@ public class CustomRunTimeException extends RuntimeException {
      * @param objName
      */
     public static void parameterError(String objName){
-        throw new CustomRunTimeException(ResultCodeEnum.PARAM_VALUE_INVALID.getKey(),ResultCodeEnum.PARAM_VALUE_INVALID.getValue(), new Object[]{objName});
+        throw new CustomRunTimeException(ResultCodeEnum.PARAM_VALUE_INVALID,new Object[]{objName});
     }
 
     /**
@@ -170,7 +197,7 @@ public class CustomRunTimeException extends RuntimeException {
      */
     public static void checkNotNull(Object object, String objName){
         if(object != null){
-            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NOT_NULL.getKey(), ResultCodeEnum.API_DATA_IS_NOT_NULL.getValue(), new Object[]{objName});
+            throw new CustomRunTimeException(ResultCodeEnum.API_DATA_IS_NOT_NULL, new Object[]{objName});
         }
     }
 

@@ -1,6 +1,5 @@
 package com.lc.springcloud.utils;
 
-import com.sykj.uusmart.pojo.NexusUserDevice;
 
 import java.util.List;
 
@@ -61,27 +60,27 @@ public class BoyerMoore {
     }
 
 
-    public static NexusUserDevice matchingDingDongNexusUserDevice(List<NexusUserDevice> uex, String aleaxName){
-        double max = 0.0;
-        NexusUserDevice nexusUserDevice = new NexusUserDevice();
-        double ing = 0.0;
-        for(NexusUserDevice nudIng : uex){
-            double one = match(nudIng.getRemarks(), aleaxName);
-            double two = match(aleaxName, nudIng.getRemarks());
-            ing =  one > two ? one : two;
-            if(ing > max){
-                max = ing;
-                nexusUserDevice = nudIng;
-            }
-            if(ing == 1.0){
-                return nexusUserDevice;
-            }
-        }
-        if(max < 0.5){
-            nexusUserDevice = null;
-        }
-        return nexusUserDevice;
-    }
+//    public static NexusUserDevice matchingDingDongNexusUserDevice(List<NexusUserDevice> uex, String aleaxName){
+//        double max = 0.0;
+//        NexusUserDevice nexusUserDevice = new NexusUserDevice();
+//        double ing = 0.0;
+//        for(NexusUserDevice nudIng : uex){
+//            double one = match(nudIng.getRemarks(), aleaxName);
+//            double two = match(aleaxName, nudIng.getRemarks());
+//            ing =  one > two ? one : two;
+//            if(ing > max){
+//                max = ing;
+//                nexusUserDevice = nudIng;
+//            }
+//            if(ing == 1.0){
+//                return nexusUserDevice;
+//            }
+//        }
+//        if(max < 0.5){
+//            nexusUserDevice = null;
+//        }
+//        return nexusUserDevice;
+//    }
 
 
 

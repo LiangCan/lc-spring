@@ -9,8 +9,8 @@
 package com.lc.springcloud.utils;
 
 import com.google.gson.Gson;
-import com.sykj.uusmart.Constants;
-import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.lc.springcloud.ResultCodeEnum;
+import com.lc.springcloud.exception.CustomRunTimeException;
 
 /**
  * @ClassName: GsonUtils
@@ -50,7 +50,7 @@ public class GsonUtils {
             return gs.fromJson(obj, t);
         }catch (Exception e){
 //            e.printStackTrace();
-            throw new CustomRunTimeException(Constants.resultCode.PARAM_VALUE_INVALID, Constants.systemError.PARAM_VALUE_INVALID, new Object[]{"gson"});
+            throw new CustomRunTimeException(ResultCodeEnum.PARAM_VALUE_INVALID,  new Object[]{"gson"});
         }
     }
 }

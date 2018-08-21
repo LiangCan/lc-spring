@@ -8,10 +8,10 @@ eureka:
 
 spring:
   application:
-    name: lc-app
+    name: LC-APP
   cloud:
     config:
-      name: lc-app,lc-conf
+      name: lc-app,lc-conf,lc-db,lc-redis
       profile: dev
       label: master
       discovery:

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.tags.Param;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableEurekaClient
@@ -27,6 +28,7 @@ import org.springframework.web.servlet.tags.Param;
 @RestController
 @RefreshScope
 @EnableHystrix
+@EnableSwagger2
 @EnableHystrixDashboard
 @EnableFeignClients
 @EnableCircuitBreaker

@@ -8,6 +8,11 @@ public enum ResultCodeEnum {
      * 未知系统错误  0
      */
     SYSTEM_ERROR("0", "system.error"),
+
+    /**
+     * 成功  1
+     */
+    SUCCESS("1", "system.sucess"),
     /**
      * 缺少必备参数  10001
      */
@@ -66,8 +71,6 @@ public enum ResultCodeEnum {
      * 设备响应指令超时   20001
      */
     MSG_NOT_RESPONSE("20001", "device.msg_not_response"),
-
-
     /**
      * 服务宕机了  30000
      */
@@ -82,15 +85,20 @@ public enum ResultCodeEnum {
     PUSH_MSG_ERROR("30002", "ser.push_msg_fail");
 
     ResultCodeEnum(String key, String value) {
+        this.key = key;
         this.value = value;
     }
 
-    private String key;
+    public  String key;
 
-    private String value;
+    public  String value;
 
     public String getKey() {
         return key;
+    }
+
+    public Integer getIntKey() {
+        return Integer.parseInt(key);
     }
 
     public void setKey(String key) {

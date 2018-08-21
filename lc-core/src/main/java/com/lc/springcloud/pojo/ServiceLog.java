@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class ServiceLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "log_id", length = 16)
     private Long logId;//日志ID
 
@@ -49,7 +49,7 @@ public class ServiceLog {
     private String returnData;//返回数据
 
     @Column(name = "handel_status", columnDefinition = " smallint(2)  DEFAULT NULL COMMENT '最终结果 0 未知 1 成功 9 失败' ")
-    private Short handelStatus;//最终结果 0 未知 1 成功 9 失败
+    private Integer handelStatus;//最终结果 0 未知 1 成功 9 失败
 
     public ServiceLog() {
     }
@@ -150,13 +150,11 @@ public class ServiceLog {
         this.returnData = returnData;
     }
 
-    public Short getHandelStatus() {
+    public Integer getHandelStatus() {
         return handelStatus;
     }
 
-    public void setHandelStatus(Short handelStatus) {
+    public void setHandelStatus(Integer handelStatus) {
         this.handelStatus = handelStatus;
     }
-
-
 }
